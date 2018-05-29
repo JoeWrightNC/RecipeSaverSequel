@@ -1,0 +1,22 @@
+<div class="col s12 m3">
+    <div class="card horizontal">
+{{!--       <div class="card-image">
+        <img src="assets/images/cardHor.jpg">
+      </div> --}}
+      <div class="card-stacked">
+        <div class="card-content">
+					<span class="card-title">{{recipeName}}</span>
+{{!-- 					<button class="change-tried" data-id="{{id}}" data-newTried="{{tried}}">
+						Save This Recipe
+					</button> --}}
+					<a class="waves-effect waves-light btn-small change-tried" data-id="{{id}}" data-newTried="{{tried}}">Save This Recipe</a>
+					<br>
+					<a class="waves-effect waves-light btn-small delete-recipe" data-id="{{this.id}}">Not A Keeper</a>
+{{!-- 					<button class="delete-recipe" data-id="{{this.id}}">DELETE!</button>         
+ --}}				</div>
+        <div class="card-action">
+  				<a href="{{recipeUrl}}" target="_blank">View Recipe</a>
+        </div>
+      </div>
+    </div>
+  </div>
