@@ -1,4 +1,5 @@
 $(function() {
+  
   $(".change-tried").on("click", function(event) {
     var id = $(this).data("id");
     var newTried = $(this).data("newTried");
