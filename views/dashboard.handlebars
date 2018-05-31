@@ -1,13 +1,13 @@
 <div id="lander">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/logout">
-          Logout
-        </a>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper teal lighten-2">
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/logout" id="navLogout">Logout</a></li>
+        </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
   <h1 class="logo">Two Tablespoons</h1>
   <h2 class="subLogo">Try New Recipes <br>Save The Ones You Love</h2>
   <div class="buttonsDiv">
@@ -18,6 +18,15 @@
 </div>
 
 <div id="addOne">
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper teal lighten-2">
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
   <div class="midpageJumbo">
     <h2 class="subLogoInverse">Add A Recipe</h2>
     <form class="create-form">
@@ -45,6 +54,15 @@
 </div>
 
 <div id="toTryPage">
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper teal lighten-2">
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
   <h2 class="logo">Be Adventerous-- Try Something New.</h2>
   <div class="tryCards row">
     {{#each recipes}}
@@ -60,6 +78,15 @@
 </div>
 
 <div id="triedPage">
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper teal lighten-2">
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
   <h2 class="logo">Relax with a favorite.</h2>
   <div class="tryCards row">
     {{#each recipes}}

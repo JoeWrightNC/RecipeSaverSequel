@@ -1,10 +1,10 @@
-var express = require("express");
+//var express = require("express");
 var db = require("../models")
 //var recipes = require("../models/recipes.js");
 
 module.exports = function(app) {
-  app.get("/dashboard", function(req, res) {
-    db.recipes.findAll({
+  /* app.get("/dashboard", function(req, res) {
+    db.Recipes.findAll({
       //include: [ db.User ],
       order: "name ASC"
     })
@@ -17,10 +17,11 @@ module.exports = function(app) {
     .catch(function(err){
       res.json({status: "ERROR", message: err})
     })
-  });
+  }); */
   
   app.post("/api/recipes", function(req, res) {
-    db.recipes.create(req.body) 
+    console.log(req.body)
+    db.Recipes.create(req.body) 
     .then(function(recipe) {
       //res.redirect("/")
       res.json(recipe);
@@ -29,11 +30,14 @@ module.exports = function(app) {
       res.json({status: "ERROR", message: err})
     })
   });
-  
+
+
   app.put("/api/recipes/:id", function(req, res) {
     var recipeID = req.params.id;
-    var rating = req.body.rating;
-    db.recipes.findAll({
+    //var rating = req.body.rating;
+    db.Recipes.update({
+      tried: true
+    }, {
       where: {
         id: recipeID
       }
@@ -52,7 +56,7 @@ module.exports = function(app) {
 
   app.delete("/api/recipes/:id", function(req, res) {
     var recipeID = req.params.id;
-    db.recipes.findAll({
+    db.Recipes.destroy({
       where: {
         id: recipeID
       }

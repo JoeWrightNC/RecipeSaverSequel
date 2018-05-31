@@ -8,6 +8,17 @@
   src: url("../fonts/recipeBody.ttf")
 }
 
+#index {
+  background-image: url("../images/recipeBackground.jpg");
+  background-size: 100% 100%;
+  height:100vh;
+  width:100vw;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+}
+
 #lander {
   background-image: url("../images/recipeBackground.jpg");
   background-size: 100% 100%;
@@ -17,6 +28,10 @@
   top:0;
   left:0;
   right:0;
+}
+
+nav {
+  opacity: .75;
 }
 
 .logo {

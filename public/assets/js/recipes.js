@@ -25,7 +25,7 @@ $(function() {
     } else {
       var newRecipe = {
         recipeName: $("#rn").val().trim(),
-        recipeUrl: $("#ru").val().trim()
+        recipeURL: $("#ru").val().trim()
       };
       $.ajax("/api/recipes", {
         type: "POST",
