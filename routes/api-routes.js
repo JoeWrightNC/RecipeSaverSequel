@@ -23,7 +23,7 @@ module.exports = function(app) {
     db.recipes.create(req.body) 
     .then(function(recipe) {
       //res.redirect("/")
-      res.json({ id: result.insertId });
+      res.json(recipe);
     })
     .catch(function(err) {
       res.json({status: "ERROR", message: err})
