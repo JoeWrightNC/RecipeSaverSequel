@@ -6,7 +6,6 @@ var app = express();
 var exphbs = require("express-handlebars");
 
 var PORT = process.env.PORT || 8080;
-var db = require("./models");
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,16 +17,18 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 app.get('/', function(req, res) {
-  res.send('Welcome to Passport with Sequelize');
+	res.render('index'); 
 });
 //Models
 var models = require("./models");
 //Routes
 var authRoute = require('./routes/auth')(app,passport);
+require("./routes/api-routes.js")(app);
+
 //load passport strategies
 require('./config/passport/passport')(passport, models.user);
 //Sync Database
-models.sequelize.sync({ force: true }).then(function() {
+models.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("Server listening on: http://localhost:" + PORT);
   });  
