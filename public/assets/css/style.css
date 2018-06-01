@@ -143,13 +143,14 @@ nav {
   font-family: Body;
   text-align: center;
   position: absolute;
-  top:200vh;
+  top:0vh;
   left:0;
   right:0;
   width:100vw;
-  height:200vh;
+  min-height:100vh;
+  height:auto;
   background-image: url("../images/longBackground.jpg");
-  background-size: 100vw 200vh;
+  background-size: 100vw auto;
 }
 
 .btn-small {
@@ -160,12 +161,13 @@ nav {
 #triedPage {
   font-family: Body;
   text-align: center;
-  position: relative;
-  top:400vh;
+  position: absolute;
+  top:0;
   left:0;
   right:0;
   width:100vw;
-  height:200vh;
+  min-height:100vh;
+  height:auto;
   background-image: url("../images/longBackground.jpg");
-  background-size: 100vw 200vh;
+  background-size: 100vw auto;
 }

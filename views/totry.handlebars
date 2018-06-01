@@ -1,0 +1,23 @@
+<div id="toTryPage">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper teal lighten-2">
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <h2 class="logo">Be Adventerous-- Try Something New.</h2>
+    <div class="tryCards row">
+      {{#each recipes}}
+        {{#unless tried}}
+          {{> recipes/toTry-block}}
+        {{/unless}}
+      {{/each}}
+    </div>
+    <div class="buttonsDiv">
+      <a href="/dashboard" class="waves-effect waves-light btn-large button addPageLoad"><i class="material-icons right">note_add</i>Home</a>
+      <a href="/saved" class="waves-effect waves-light btn-large button triedPageLoad"><i class="material-icons right">save</i>Saved Recipes</a>
+    </div>
+</div>
