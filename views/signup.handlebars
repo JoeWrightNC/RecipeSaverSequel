@@ -1,15 +1,31 @@
 
 <body>
-<form id="signup" name="signup" method="post" action="/signup">
-  <label for="email">Email Address</label>
-  <input class="text" name="email" type="email" />
-  <label for="firstname">Firstname</label>
-  <input name="firstname" type="text" />
-  <label for="lastname">Lastname</label>
-  <input name="lastname" type="text" />
-  <label for="password">Password</label>
-  <input name="password" type="password" />
-  <input class="btn" type="submit" value="Sign Up" />
-</form>
-
-</body>
+<div id="signUpPage">
+  <h1 class="logo">Two Tablespoons</h1>
+  <form id="signup" name="signup" method="post" action="/signup">
+    <div class="form-group black-text">
+      <div class="input-field teal lighten-4">
+        <label for="email">Email Address</label>
+        <input class="text" name="email" type="email" />
+      </div>
+      <div class="input-field teal lighten-4">
+        <label for="firstname">Firstname</label>
+        <input name="firstname" type="text" />
+      </div>
+      <div class="input-field teal lighten-4">
+        <label for="lastname">Lastname</label>
+        <input name="lastname" type="text" />
+      </div>
+      <div class="input-field teal lighten-4">
+        <label for="password">Password</label>
+        <input name="password" type="password" />
+      </div>
+      <div class="buttonsDiv">
+        <button type="submit" class="waves-effect waves-light btn-large button">
+          <input class="btn" type="submit" value="Sign Up" />
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+</body> 

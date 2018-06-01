@@ -1,23 +1,6 @@
-//var express = require("express");
 var db = require("../models")
-//var recipes = require("../models/recipes.js");
 
 module.exports = function(app) {
-  /* app.get("/dashboard", function(req, res) {
-    db.Recipes.findAll({
-      //include: [ db.User ],
-      order: "name ASC"
-    })
-    .then(function(data) {
-      var hbsObject = {
-        recipes: data
-      };
-      res.render("dashboard", hbsObject);
-    })
-    .catch(function(err){
-      res.json({status: "ERROR", message: err})
-    })
-  }); */
   
   app.post("/api/recipes", function(req, res) {
     console.log(req.body)

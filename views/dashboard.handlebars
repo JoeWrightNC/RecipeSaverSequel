@@ -1,104 +1,102 @@
-<div id="lander">
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper teal lighten-2">
-        <ul class="right hide-on-med-and-down">
-          <li><a href="/logout" id="navLogout">Logout</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <h1 class="logo">Two Tablespoons</h1>
-  <h2 class="subLogo">Try New Recipes <br>Save The Ones You Love</h2>
-  <div class="buttonsDiv">
-    <a class="waves-effect waves-light btn-large button addPageLoad"><i class="material-icons right">note_add</i>Add A Recipe</a>
-    <a class="waves-effect waves-light btn-large button toTryPageLoad"><i class="material-icons right">kitchen</i>Recipes to Try</a>
-    <a class="waves-effect waves-light btn-large button triedPageLoad"><i class="material-icons right">save</i>Saved Recipes</a>
-  </div>
-</div>
-
-<div id="addOne">
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper teal lighten-2">
-        <ul class="right hide-on-med-and-down">
-          <li><a href="/logout">Logout</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="midpageJumbo">
-    <h2 class="subLogoInverse">Add A Recipe</h2>
-    <form class="create-form">
-      <div class="form-group black-text">
-        <div class="input-field teal lighten-4">
-          <input id="rn" type="text" name="recipeName">
-          <label for="rn">Recipe Name</label>
+<div id="dashboard">
+  <div id="lander">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper teal lighten-2">
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/logout" id="navLogout">Logout</a></li>
+          </ul>
         </div>
-        <div class="input-field teal lighten-4">
-          <input id="ru" type="text" name="recipeUrl">
-          <label for="ru">Recipe URL</label>
-        </div>
-      </div>
-      <div class="buttonsDiv">
-        <button type="submit" class="waves-effect waves-light btn-large button"><i class="material-icons right">add</i>
-        Add Recipe
-        </button>
-      </div>
-  </form>
+      </nav>
+    </div>
+    <h1 class="logo">Two Tablespoons</h1>
+    <h2 class="subLogo">Try New Recipes <br>Save The Ones You Love</h2>
     <div class="buttonsDiv">
-      <a class="waves-effect waves-light btn-large button toTryPageLoad"><i class="material-icons right">kitchen</i>Recipes to Try</a>
-      <a class="waves-effect waves-light btn-large button triedPageLoad"><i class="material-icons right">save</i>Saved Recipes</a>
+      <a href="#addOne" class="waves-effect waves-light btn-large button addPageLoad"><i class="material-icons right">note_add</i>Add A Recipe</a>
+      <a href="#toTryPage" class="waves-effect waves-light btn-large button toTryPageLoad"><i class="material-icons right">kitchen</i>Recipes to Try</a>
+      <a href="#triedPage" class="waves-effect waves-light btn-large button triedPageLoad"><i class="material-icons right">save</i>Saved Recipes</a>
+    </div>
+  </div>
+  <div id="addOne">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper teal lighten-2">
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="midpageJumbo">
+      <h2 class="subLogoInverse">Add A Recipe</h2>
+      <form class="create-form">
+        <div class="form-group black-text">
+          <div class="input-field teal lighten-4">
+            <input id="rn" type="text" name="recipeName">
+            <label for="rn">Recipe Name</label>
+          </div>
+          <div class="input-field teal lighten-4">
+            <input id="ru" type="text" name="recipeUrl">
+            <label for="ru">Recipe URL</label>
+          </div>
+        </div>
+        <div class="buttonsDiv">
+          <button type="submit" class="waves-effect waves-light btn-large button"><i class="material-icons right">add</i>
+          Add Recipe
+          </button>
+        </div>
+    </form>
+      <div class="buttonsDiv">
+        <a href="#toTryPage" class="waves-effect waves-light btn-large button toTryPageLoad"><i class="material-icons right">kitchen</i>Recipes to Try</a>
+        <a href="#triedPage" class="waves-effect waves-light btn-large button triedPageLoad"><i class="material-icons right">save</i>Saved Recipes</a>
+      </div>
+    </div>
+  </div>
+  <div id="toTryPage">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper teal lighten-2">
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <h2 class="logo">Be Adventerous-- Try Something New.</h2>
+    <div class="tryCards row">
+      {{#each recipes}}
+        {{#unless tried}}
+          {{> recipes/toTry-block}}
+        {{/unless}}
+      {{/each}}
+    </div>
+    <div class="buttonsDiv">
+      <a href="#addOne" class="waves-effect waves-light btn-large button addPageLoad"><i class="material-icons right">note_add</i>Add A Recipe</a>
+      <a href="#triedPage" class="waves-effect waves-light btn-large button triedPageLoad"><i class="material-icons right">save</i>Saved Recipes</a>
+    </div>
+  </div>
+  <div id="triedPage">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper teal lighten-2">
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <h2 class="logo">Relax with a favorite.</h2>
+    <div class="tryCards row">
+      {{#each recipes}}
+        {{#if tried}}
+          {{> recipes/toTry-block}}
+        {{/if}}
+      {{/each}}
+    </div>
+    <div class="buttonsDiv">
+      <a href="#addOne" class="waves-effect waves-light btn-large button addPageLoad"><i class="material-icons right">note_add</i>Add A Recipe</a>
+      <a href="#toTryPage" class="waves-effect waves-light btn-large button toTryPageLoad"><i class="material-icons right">kitchen</i>Recipes to Try</a>
     </div>
   </div>
 </div>
-
-<div id="toTryPage">
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper teal lighten-2">
-        <ul class="right hide-on-med-and-down">
-          <li><a href="/logout">Logout</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <h2 class="logo">Be Adventerous-- Try Something New.</h2>
-  <div class="tryCards row">
-    {{#each recipes}}
-      {{#unless tried}}
-        {{> recipes/toTry-block}}
-      {{/unless}}
-    {{/each}}
-  </div>
-  <div class="buttonsDiv">
-    <a class="waves-effect waves-light btn-large button addPageLoad"><i class="material-icons right">note_add</i>Add A Recipe</a>
-    <a class="waves-effect waves-light btn-large button triedPageLoad"><i class="material-icons right">save</i>Saved Recipes</a>
-  </div>
-</div>
-
-<div id="triedPage">
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper teal lighten-2">
-        <ul class="right hide-on-med-and-down">
-          <li><a href="/logout">Logout</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <h2 class="logo">Relax with a favorite.</h2>
-  <div class="tryCards row">
-    {{#each recipes}}
-      {{#if tried}}
-        {{> recipes/toTry-block}}
-      {{/if}}
-    {{/each}}
-  </div>
-  <div class="buttonsDiv">
-    <a class="waves-effect waves-light btn-large button addPageLoad"><i class="material-icons right">note_add</i>Add A Recipe</a>
-    <a class="waves-effect waves-light btn-large button toTryPageLoad"><i class="material-icons right">kitchen</i>Recipes to Try</a>
-  </div>
-</div>
-
 
