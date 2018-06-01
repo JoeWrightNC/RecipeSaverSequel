@@ -14,10 +14,10 @@ exports.dashboard = function(req,res){
 }
 
 exports.totry = function(req,res){
-  db.Recipes.findAll(/* {
+  db.Recipes.findAll( /* {
     include: [db.User],
     order: "name ASC"
-  } */)
+  }  */)
   .then(function(data) {
     var hbsObject = {
       recipes: data

@@ -171,3 +171,8 @@ nav {
   background-image: url("../images/longBackground.jpg");
   background-size: 100vw auto;
 }
+
+.btnInputHack {
+  font-family: Body;
+  color:white;
+}
