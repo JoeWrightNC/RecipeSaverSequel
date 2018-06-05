@@ -1,5 +1,5 @@
 var db = require("../models")
-const env = require('../.env');  
+//const env = require('../.env');  
 
 
 module.exports = function(app) {
