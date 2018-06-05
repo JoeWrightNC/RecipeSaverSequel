@@ -4,9 +4,8 @@
   "description": "Full Stack App using Express, MySQL, HandleBars, and a homemade ORM.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }, 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JoeWrightNC/RecipeSaver.git"
