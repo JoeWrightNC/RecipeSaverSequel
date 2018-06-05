@@ -9,13 +9,16 @@ exports.signin = function(req,res){
 	res.render('signin'); 
 }
 
-exports.dashboard = function(req,res){
-  res.render('dashboard')
+exports.dashboard = function (req, res) {
+  res.render('dashboard', { userId: req.user.id });
 }
 
 exports.totry = function(req,res){
-  db.Recipes.findAll(  {
-    include: [db.User],
+  //console.log(req)
+  db.Recipes.findAll({
+    where: {
+      userId: req.user.id
+    }
   }  )
   .then(function(data) {
     var hbsObject = {
@@ -30,8 +33,10 @@ exports.totry = function(req,res){
 
 exports.saved = function(req,res){
   db.Recipes.findAll( {
-    include: [db.User],
-  } )
+    where: {
+      userId: req.user.id
+    }
+  })
   .then(function(data) {
     var hbsObject = {
       recipes: data

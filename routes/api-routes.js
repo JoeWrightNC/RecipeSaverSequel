@@ -1,16 +1,22 @@
 var db = require("../models")
+const env = require('../.env');  
+
 
 module.exports = function(app) {
   
-  app.post("/api/recipes", function(req, res) {
-    console.log(req.body)
-    db.Recipes.create(req.body) 
-    .then(function(recipe) {
-      //res.redirect("/")
-      res.json(recipe);
+  app.post("/api/recipes", function (req, res) {
+    var userId = '';
+    db.Recipes.create({
+      recipeName: req.body.recipeName,
+      recipeURL: req.body.recipeURL,
+      userId: req.body.userId
     })
-    .catch(function(err) {
-      res.json({status: "ERROR", message: err})
+    .then(function (recipe) {
+        res.json(recipe);
+    })
+    .catch(function (err) {
+      console.log(err);
+    res.json({status: "ERROR", message: err})
     })
   });
 

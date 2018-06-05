@@ -28,7 +28,7 @@ require("./routes/api-routes.js")(app);
 //load passport strategies
 require('./config/passport/passport')(passport, models.user);
 //Sync Database
-models.sequelize.sync({ force: true }).then(function() {
+models.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("Server listening on: http://localhost:" + PORT);
   });  

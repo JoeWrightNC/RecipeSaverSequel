@@ -1,8 +1,8 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, Sequelize) {
   var Recipes = sequelize.define("Recipes", {
-    recipeName: { type: DataTypes.STRING, allowNull: false},
-    recipeURL: { type: DataTypes.STRING, allowNull: false},
-    tried: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false },
+    recipeName: { type: Sequelize.STRING, allowNull: false},
+    recipeURL: { type: Sequelize.STRING, allowNull: false},
+    tried: { type: Sequelize.BOOLEAN, allowNull: false, defaultValue: false },
   });
 
   Recipes.associate = function(models) {
